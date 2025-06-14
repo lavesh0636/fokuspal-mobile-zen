@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Badge } from "@/components/ui/badge";
-import { Send, Bot, User, Zap, Target, Clock } from "lucide-react";
+import { Send, Bot, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface Message {
@@ -12,28 +11,20 @@ interface Message {
   text: string;
   sender: "user" | "ai";
   timestamp: Date;
-  type?: "suggestion" | "encouragement" | "tip";
 }
 
 const AICoach = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Welcome to your personal AI productivity coach! 🚀 I'm here to help you maximize your focus and achieve your goals. What would you like to work on today?",
+      text: "Hello! I'm your AI productivity coach. How can I help you stay focused today?",
       sender: "ai",
       timestamp: new Date(),
-      type: "encouragement"
     },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-
-  const quickActions = [
-    { text: "Help me stay focused", icon: Target },
-    { text: "Set daily goals", icon: Zap },
-    { text: "Time management tips", icon: Clock },
-  ];
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -49,14 +40,13 @@ const AICoach = () => {
     setInput("");
     setIsLoading(true);
 
-    // Enhanced AI response simulation
+    // Simulate AI response (replace with actual GROQ API call when ready)
     setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         text: generateMockResponse(input),
         sender: "ai",
         timestamp: new Date(),
-        type: Math.random() > 0.5 ? "suggestion" : "tip"
       };
       setMessages(prev => [...prev, aiResponse]);
       setIsLoading(false);
