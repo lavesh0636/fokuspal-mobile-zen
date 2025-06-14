@@ -8,111 +8,111 @@
 
 @layer base {
   :root {
-    /* Professional Color Scheme - Clean & Modern */
-    --background: 250 250 251; /* gray-50 */
-    --foreground: 17 24 39; /* gray-900 */
+    /* Enhanced Professional Color Scheme */
+    --background: 248 250 252; /* slate-50 */
+    --foreground: 15 23 42; /* slate-800 */
 
     --card: 255 255 255; /* white */
-    --card-foreground: 17 24 39; /* gray-900 */
+    --card-foreground: 15 23 42; /* slate-800 */
 
     --popover: 255 255 255;
-    --popover-foreground: 17 24 39;
+    --popover-foreground: 15 23 42;
 
-    /* Primary: Professional Indigo */
-    --primary: 79 70 229; /* indigo-600 */
+    /* Focus-oriented primary colors - Deep Blue/Purple */
+    --primary: 239 68 68; /* red-500 - energizing focus color */
     --primary-foreground: 255 255 255;
 
-    /* Success: Professional Emerald */
-    --success: 5 150 105; /* emerald-600 */
+    /* Success/Achievement colors */
+    --success: 34 197 94; /* green-500 */
     --success-foreground: 255 255 255;
 
-    --secondary: 243 244 246; /* gray-100 */
-    --secondary-foreground: 55 65 81; /* gray-700 */
+    --secondary: 241 245 249; /* slate-100 */
+    --secondary-foreground: 51 65 85; /* slate-600 */
 
-    --muted: 249 250 251; /* gray-50 */
-    --muted-foreground: 107 114 128; /* gray-500 */
+    --muted: 248 250 252; /* slate-50 */
+    --muted-foreground: 100 116 139; /* slate-500 */
 
-    --accent: 99 102 241; /* indigo-500 */
+    --accent: 99 102 241; /* indigo-500 - accent for productivity */
     --accent-foreground: 255 255 255;
 
-    /* Warning: Professional Amber */
-    --warning: 217 119 6; /* amber-600 */
+    /* Warning colors for breaks */
+    --warning: 139 92 246; /* violet-500 */
     --warning-foreground: 255 255 255;
 
-    --destructive: 220 38 38; /* red-600 */
+    --destructive: 239 68 68; /* red-500 */
     --destructive-foreground: 255 255 255;
 
-    --border: 229 231 235; /* gray-200 */
-    --input: 229 231 235;
-    --ring: 79 70 229; /* indigo-600 */
+    --border: 226 232 240; /* slate-200 */
+    --input: 226 232 240;
+    --ring: 239 68 68; /* red-500 */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Professional Gradients */
-    --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
-    --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
-    --gradient-success: linear-gradient(135deg, #059669 0%, #047857 100%);
-    --gradient-background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    --gradient-success: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    --gradient-background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 
     --sidebar-background: 255 255 255;
-    --sidebar-foreground: 17 24 39;
-    --sidebar-primary: 79 70 229;
+    --sidebar-foreground: 15 23 42;
+    --sidebar-primary: 239 68 68;
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 243 244 246;
-    --sidebar-accent-foreground: 55 65 81;
-    --sidebar-border: 229 231 235;
-    --sidebar-ring: 79 70 229;
+    --sidebar-accent: 241 245 249;
+    --sidebar-accent-foreground: 51 65 85;
+    --sidebar-border: 226 232 240;
+    --sidebar-ring: 239 68 68;
   }
 
   .dark {
-    --background: 3 7 18; /* slate-950 */
+    --background: 15 23 42; /* slate-800 */
     --foreground: 248 250 252; /* slate-50 */
 
-    --card: 15 23 42; /* slate-800 */
+    --card: 30 41 59; /* slate-700 */
     --card-foreground: 248 250 252;
 
-    --popover: 15 23 42;
+    --popover: 30 41 59;
     --popover-foreground: 248 250 252;
 
-    --primary: 129 140 248; /* indigo-400 */
+    --primary: 248 113 113; /* red-400 - lighter for dark mode */
     --primary-foreground: 15 23 42;
 
-    --success: 52 211 153; /* emerald-400 */
+    --success: 74 222 128; /* green-400 */
     --success-foreground: 15 23 42;
 
-    --secondary: 30 41 59; /* slate-700 */
+    --secondary: 51 65 85; /* slate-600 */
     --secondary-foreground: 248 250 252;
 
-    --muted: 30 41 59;
+    --muted: 51 65 85;
     --muted-foreground: 148 163 184; /* slate-400 */
 
-    --accent: 99 102 241; /* indigo-500 */
-    --accent-foreground: 248 250 252;
+    --accent: 129 140 248; /* indigo-400 */
+    --accent-foreground: 15 23 42;
 
-    --warning: 251 191 36; /* amber-400 */
+    --warning: 167 139 250; /* violet-400 */
     --warning-foreground: 15 23 42;
 
-    --destructive: 248 113 113; /* red-400 */
+    --destructive: 248 113 113;
     --destructive-foreground: 15 23 42;
 
-    --border: 51 65 85; /* slate-600 */
+    --border: 51 65 85;
     --input: 51 65 85;
-    --ring: 129 140 248;
+    --ring: 248 113 113;
 
     /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
-    --gradient-secondary: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
-    --gradient-success: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-    --gradient-background: linear-gradient(135deg, #030712 0%, #0f172a 100%);
+    --gradient-primary: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+    --gradient-secondary: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+    --gradient-success: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    --gradient-background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 
-    --sidebar-background: 15 23 42;
+    --sidebar-background: 30 41 59;
     --sidebar-foreground: 248 250 252;
-    --sidebar-primary: 129 140 248;
+    --sidebar-primary: 248 113 113;
     --sidebar-primary-foreground: 15 23 42;
-    --sidebar-accent: 30 41 59;
+    --sidebar-accent: 51 65 85;
     --sidebar-accent-foreground: 248 250 252;
     --sidebar-border: 51 65 85;
-    --sidebar-ring: 129 140 248;
+    --sidebar-ring: 248 113 113;
   }
 }
 
