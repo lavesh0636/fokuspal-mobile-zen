@@ -97,24 +97,24 @@ const Home = () => {
   return (
     <div className="min-h-screen p-4 space-y-8 animate-fade-in">
       {/* Header */}
-      <div className="text-center space-y-2">
+      <div className="text-center space-y-2 slide-up">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <Target className="w-8 h-8 text-primary" />
+          <Target className="w-8 h-8 text-primary float" />
           <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             FokusPal
           </h1>
         </div>
         <p className="text-muted-foreground text-lg">Your productivity companion</p>
-        <Badge variant="outline" className="text-sm">
+        <Badge variant="outline" className="text-sm bounce-in">
           Session #{currentSession}
         </Badge>
       </div>
 
       {/* Main Timer Card */}
-      <Card className="mx-auto max-w-md shadow-luxury border-0 animate-scale-in">
+      <Card className="mx-auto max-w-md shadow-luxury border-0 animate-scale-in hover:shadow-glow transition-all duration-500">
         <CardHeader className="text-center pb-4">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <div className={`w-3 h-3 rounded-full ${sessionConfig[sessionType].color}`}></div>
+            <div className={`w-3 h-3 rounded-full ${sessionConfig[sessionType].color} animate-pulse`}></div>
             <CardTitle className="text-xl">{sessionConfig[sessionType].label}</CardTitle>
           </div>
           <p className="text-sm text-muted-foreground">
@@ -177,30 +177,30 @@ const Home = () => {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
-        <Card className="text-center p-4 hover:shadow-soft transition-all duration-300">
+        <Card className="text-center p-4 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
           <CardContent className="p-0">
             <div className="flex flex-col items-center space-y-2">
-              <Clock className="w-6 h-6 text-primary" />
+              <Clock className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               <div className="text-2xl font-bold text-primary">{sessions}</div>
               <p className="text-xs text-muted-foreground">Sessions</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="text-center p-4 hover:shadow-soft transition-all duration-300">
+        <Card className="text-center p-4 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
           <CardContent className="p-0">
             <div className="flex flex-col items-center space-y-2">
-              <Zap className="w-6 h-6 text-warning" />
+              <Zap className="w-6 h-6 text-warning group-hover:scale-110 transition-transform duration-300" />
               <div className="text-2xl font-bold text-warning">{sessions * 25}m</div>
               <p className="text-xs text-muted-foreground">Focus Time</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="text-center p-4 hover:shadow-soft transition-all duration-300">
+        <Card className="text-center p-4 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
           <CardContent className="p-0">
             <div className="flex flex-col items-center space-y-2">
-              <Award className="w-6 h-6 text-success" />
+              <Award className="w-6 h-6 text-success group-hover:scale-110 transition-transform duration-300" />
               <div className="text-2xl font-bold text-success">{focusScore}%</div>
               <p className="text-xs text-muted-foreground">Score</p>
             </div>
