@@ -1,1 +1,19 @@
 project_id = "rughtylqssftfcfljwcd"
+
+[functions.start-session]
+verify_jwt = true
+
+[functions.end-session] 
+verify_jwt = true
+
+[functions.log-usage]
+verify_jwt = true
+
+[functions.ai-assistant]
+verify_jwt = true
+
+[functions.get-summary]
+verify_jwt = true
+
+[functions.manage-goals]
+verify_jwt = true

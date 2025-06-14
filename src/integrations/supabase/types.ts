@@ -9,7 +9,164 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      ai_chat_history: {
+        Row: {
+          ai_response: string
+          created_at: string
+          id: string
+          user_id: string
+          user_message: string
+        }
+        Insert: {
+          ai_response: string
+          created_at?: string
+          id?: string
+          user_id: string
+          user_message: string
+        }
+        Update: {
+          ai_response?: string
+          created_at?: string
+          id?: string
+          user_id?: string
+          user_message?: string
+        }
+        Relationships: []
+      }
+      focus_sessions: {
+        Row: {
+          created_at: string
+          duration_seconds: number | null
+          end_time: string | null
+          id: string
+          productivity_score: number | null
+          start_time: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          duration_seconds?: number | null
+          end_time?: string | null
+          id?: string
+          productivity_score?: number | null
+          start_time?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          duration_seconds?: number | null
+          end_time?: string | null
+          id?: string
+          productivity_score?: number | null
+          start_time?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      goals: {
+        Row: {
+          created_at: string
+          goal_text: string
+          id: string
+          is_completed: boolean | null
+          target_date: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          goal_text: string
+          id?: string
+          is_completed?: boolean | null
+          target_date?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          goal_text?: string
+          id?: string
+          is_completed?: boolean | null
+          target_date?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      usage_logs: {
+        Row: {
+          created_at: string
+          date: string
+          duration_seconds: number
+          id: string
+          session_id: string | null
+          source_name: string
+          source_type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          date?: string
+          duration_seconds: number
+          id?: string
+          session_id?: string | null
+          source_name: string
+          source_type: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          duration_seconds?: number
+          id?: string
+          session_id?: string | null
+          source_name?: string
+          source_type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "usage_logs_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "focus_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_settings: {
+        Row: {
+          created_at: string
+          device_token: string | null
+          id: string
+          notifications_enabled: boolean | null
+          reminder_intervals: Json | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          device_token?: string | null
+          id?: string
+          notifications_enabled?: boolean | null
+          reminder_intervals?: Json | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          device_token?: string | null
+          id?: string
+          notifications_enabled?: boolean | null
+          reminder_intervals?: Json | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

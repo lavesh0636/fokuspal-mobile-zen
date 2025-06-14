@@ -8,8 +8,10 @@ import Reports from "./pages/Reports";
 import AICoach from "./pages/AICoach";
 import History from "./pages/History";
 import Settings from "./pages/Settings";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import MobileBottomNav from "./components/MobileBottomNav";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -21,11 +23,12 @@ const App = () => (
       <BrowserRouter>
         <div className="pb-16"> {/* Add padding bottom for mobile nav */}
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/ai-coach" element={<AICoach />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} />
+            <Route path="/ai-coach" element={<ProtectedRoute><AICoach /></ProtectedRoute>} />
+            <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
+            <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
